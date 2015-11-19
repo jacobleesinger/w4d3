@@ -1,0 +1,17 @@
+<h1>Welcome to 99cats</h1>
+
+<form action="/session" method="POST">
+  <input
+   type="hidden"
+   name="authenticity_token"
+   value="<%= form_authenticity_token %>">
+  <label for="user_name">username</label>
+  <input type="text" name = "user[user_name]" id="user_name">
+
+
+  <label for="password">password</label>
+  <input type="password" name = "user[password]" id = "password">
+
+  <input type="submit" value = "sign in!">
+
+</form>

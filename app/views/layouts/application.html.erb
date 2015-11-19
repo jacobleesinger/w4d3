@@ -8,6 +8,17 @@
 </head>
 <body>
 
+  <% log_status = current_user ? "LOG OUT" : "LOG IN"%>
+  <% method = current_user ? :delete : :get %>
+  <% name = current_user ? current_user.user_name : "" %>
+  <% url = current_user ? session_url : new_session_url %>
+  <h1><%=name%></h1>
+  <%= button_to log_status, url, method: method %>
+  <!-- <form action="/session" method="POST">
+    <input type="hidden" name="_method" method="<%=method%>"/>
+    <input type="submit" value="<%=log_status%>"/>
+  </form> -->
+
 <%= yield %>
 
 </body>
